@@ -147,8 +147,15 @@ body {
 	font-family: Spectral;
 	font-style: italic;
 	font-weight: 300;
-
+	font-size: calc(1.375rem + 1.5vw);
 }
+
+.tarifs {
+	font-size: calc(1.275rem + 0.3vw);
+	margin-bottom: 0.5rem;
+	line-height: 1.2;
+  }
+  
 .quote__author {
 	font-family: Spectral;
 	font-weight: 800;
@@ -354,3 +361,11 @@ input[type="submit"] {
 	}
 }
 
+@media (min-width: 1200px) {
+	.quote__text {
+	  font-size: 2.5rem;
+	}
+	.tarifs {
+		font-size: 1.5rem;
+	  }
+  }
