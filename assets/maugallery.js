@@ -234,7 +234,30 @@
       } else {
         console.error(`Unknown tags position: ${position}`);
       }
+
+      const filterButtons = gallery.find('.nav-link').toArray();
+      const lastFilterButton = filterButtons[filterButtons.length - 1];
+      
+      filterButtons.forEach((button, index) => {
+        button.setAttribute('tabindex', '0');
+        
+        button.addEventListener('keydown', (event) => {
+          if (event.key === 'Tab' && !event.shiftKey) {
+            if (index === filterButtons.length - 1) {
+              lastFilterButton.blur();
+            }
+          } else if (event.key === 'Tab' && event.shiftKey) {
+            if (index === 0) {
+              lastFilterButton.blur();
+            }
+          }
+          else if (event.key ==='Enter') {
+            button.click();
+          }
+        });
+      });
     },
+    
     filterByTag() {
       if ($(this).hasClass("active-tag")) {
         return;
@@ -261,3 +284,4 @@
     }
   };
 })(jQuery);
+
