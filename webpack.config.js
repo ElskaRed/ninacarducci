@@ -3,9 +3,9 @@ const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
 module.exports = {
     mode: "production",
-    entry: "./index.js",
+    entry: "./assets/bootstrap/bootstrap.bundle.js",
     output: {
-        filename: "cleanbundle.js",
+        filename: "cleanBoostrapBundle.js",
         path: path.resolve(__dirname, "dist"),
     },
     module: {
